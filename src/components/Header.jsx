@@ -19,8 +19,9 @@ const Header = () => {
                 <button className="btn btn-ghost text-xl">daisyUI</button>
                 <Link className='btn btn-ghost text-m' to="/">Home</Link>
                 <Link className='btn btn-ghost' to='/orders'>Orders</Link>
-                <Link className='btn btn-ghost text-m' to="/login">Login</Link>
-                <Link className='btn btn-ghost text-m' to="/register">Register</Link>
+                {!user && <Link className='btn btn-ghost text-m' to="/login">Login</Link>}
+                {!user && <Link className='btn btn-ghost text-m' to="/register">Register</Link>}
+                {user && <Link className='btn btn-ghost text-m' to='/profile'>Profile</Link>}
                 {
                     user ? <>
                     <span>{user.email}</span>
